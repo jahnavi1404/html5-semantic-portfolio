@@ -18,7 +18,20 @@
     <link rel="canonical" href="https://yourdomain.com">
 
 </head>
+<script>
+const button = document.getElementById("theme-toggle");
 
+button.addEventListener("click", () => {
+    const currentTheme =
+        document.body.getAttribute("data-theme");
+
+    if(currentTheme === "dark") {
+        document.body.removeAttribute("data-theme");
+    } else {
+        document.body.setAttribute("data-theme","dark");
+    }
+});
+</script>
 <body>
 
     <a href="#main-content" class="skip-link">
@@ -27,7 +40,9 @@
 
     <header role="banner">
         <h1>Jahnavi Portfolio</h1>
-
+        <button id="theme-toggle">
+    Toggle Theme
+</button>
         <nav aria-label="Primary Navigation">
             <ul>
                 <li><a href="index.html" aria-current="page">Home</a></li>
@@ -53,7 +68,7 @@
         <section aria-labelledby="skills-heading">
             <h2 id="skills-heading">Core Skills</h2>
 
-            <ul>
+            <ul class="skills-list">
                 <li>Python</li>
                 <li>Java</li>
                 <li>SQL</li>
