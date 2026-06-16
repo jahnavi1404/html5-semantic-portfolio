@@ -7,14 +7,29 @@
     <link rel="stylesheet" href="style.css">
     <title>About | Jahnavi Portfolio</title>
 </head>
+<script>
+const button = document.getElementById("theme-toggle");
 
+button.addEventListener("click", () => {
+    const currentTheme =
+        document.body.getAttribute("data-theme");
+
+    if(currentTheme === "dark") {
+        document.body.removeAttribute("data-theme");
+    } else {
+        document.body.setAttribute("data-theme","dark");
+    }
+});
+</script>
 <body>
 
 <header>
     <h1>About Me</h1>
-
+    <button id="theme-toggle">
+    Toggle Theme
+</button>
     <nav aria-label="Primary Navigation">
-        <ul>
+        <ul class="skills-list">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html" aria-current="page">About</a></li>
             <li><a href="projects.html">Projects</a></li>
